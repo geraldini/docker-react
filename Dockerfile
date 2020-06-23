@@ -6,5 +6,6 @@ COPY . .
 CMD ["npm", "run", "build"]
 
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 # Nginx already starts, so we don't need to specify the CMD
